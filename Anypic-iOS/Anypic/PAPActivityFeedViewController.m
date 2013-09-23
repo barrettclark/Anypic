@@ -16,6 +16,7 @@
 #import "PAPFindFriendsViewController.h"
 #import "MBProgressHUD.h"
 
+
 @interface PAPActivityFeedViewController ()
 
 @property (nonatomic, strong) PAPSettingsActionSheetDelegate *settingsActionSheetDelegate;

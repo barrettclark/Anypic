@@ -7,6 +7,7 @@
 
 #import "PAPPhotoDetailsHeaderView.h"
 #import "PAPBaseTextCell.h"
+#import "AppDelegate.h"
 
 @interface PAPPhotoDetailsViewController : PFQueryTableViewController <UITextFieldDelegate, UIActionSheetDelegate, PAPPhotoDetailsHeaderViewDelegate, PAPBaseTextCellDelegate>
 

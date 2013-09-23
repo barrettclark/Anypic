@@ -69,7 +69,7 @@ static TTTTimeIntervalFormatter *timeFormatter;
         [self.nameButton setTitleColor:[UIColor colorWithRed:73.0f/255.0f green:55.0f/255.0f blue:35.0f/255.0f alpha:1.0f] forState:UIControlStateNormal];
         [self.nameButton setTitleColor:[UIColor colorWithRed:134.0f/255.0f green:100.0f/255.0f blue:65.0f/255.0f alpha:1.0f] forState:UIControlStateHighlighted];
         [self.nameButton.titleLabel setFont:[UIFont boldSystemFontOfSize:13]];
-        [self.nameButton.titleLabel setLineBreakMode:UILineBreakModeTailTruncation];
+        [self.nameButton.titleLabel setLineBreakMode:NSLineBreakByTruncatingTail];
         [self.nameButton setTitleShadowColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [self.nameButton setTitleShadowColor:[UIColor whiteColor] forState:UIControlStateSelected];
         [self.nameButton.titleLabel setShadowOffset:CGSizeMake( 0.0f, 1.0f)];
@@ -80,7 +80,7 @@ static TTTTimeIntervalFormatter *timeFormatter;
         [self.contentLabel setFont:[UIFont systemFontOfSize:13.0f]];
         [self.contentLabel setTextColor:[UIColor colorWithRed:73./255. green:55./255. blue:35./255. alpha:1.000]];
         [self.contentLabel setNumberOfLines:0];
-        [self.contentLabel setLineBreakMode:UILineBreakModeWordWrap];
+        [self.contentLabel setLineBreakMode:NSLineBreakByWordWrapping];
         [self.contentLabel setBackgroundColor:[UIColor clearColor]];
         [self.contentLabel setShadowColor:[UIColor colorWithWhite:1.0f alpha:0.70f]];
         [self.contentLabel setShadowOffset:CGSizeMake( 0.0f, 1.0f)];
@@ -123,15 +123,15 @@ static TTTTimeIntervalFormatter *timeFormatter;
     [self.avatarImageButton setFrame:CGRectMake(avatarX, avatarY, avatarDim, avatarDim)];
     
     // Layout the name button
-    CGSize nameSize = [self.nameButton.titleLabel.text sizeWithFont:[UIFont boldSystemFontOfSize:13] forWidth:nameMaxWidth lineBreakMode:UILineBreakModeTailTruncation];
+    CGSize nameSize = [self.nameButton.titleLabel.text sizeWithFont:[UIFont boldSystemFontOfSize:13] forWidth:nameMaxWidth lineBreakMode:NSLineBreakByTruncatingTail];
     [self.nameButton setFrame:CGRectMake(nameX, nameY, nameSize.width, nameSize.height)];
     
     // Layout the content
-    CGSize contentSize = [self.contentLabel.text sizeWithFont:[UIFont systemFontOfSize:13] constrainedToSize:CGSizeMake(horizontalTextSpace, CGFLOAT_MAX) lineBreakMode:UILineBreakModeWordWrap];
+    CGSize contentSize = [self.contentLabel.text sizeWithFont:[UIFont systemFontOfSize:13] constrainedToSize:CGSizeMake(horizontalTextSpace, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping];
     [self.contentLabel setFrame:CGRectMake(nameX, vertTextBorderSpacing, contentSize.width, contentSize.height)];
     
     // Layout the timestamp label
-    CGSize timeSize = [self.timeLabel.text sizeWithFont:[UIFont systemFontOfSize:11] forWidth:horizontalTextSpace lineBreakMode:UILineBreakModeTailTruncation];
+    CGSize timeSize = [self.timeLabel.text sizeWithFont:[UIFont systemFontOfSize:11] forWidth:horizontalTextSpace lineBreakMode:NSLineBreakByTruncatingTail];
     [self.timeLabel setFrame:CGRectMake(timeX, contentLabel.frame.origin.y + contentLabel.frame.size.height + vertElemSpacing, timeSize.width, timeSize.height)];
     
     // Layour separator
@@ -167,11 +167,11 @@ static TTTTimeIntervalFormatter *timeFormatter;
 
 /* Static helper to get the height for a cell if it had the given name, content and horizontal inset */
 + (CGFloat)heightForCellWithName:(NSString *)name contentString:(NSString *)content cellInsetWidth:(CGFloat)cellInset {
-    CGSize nameSize = [name sizeWithFont:[UIFont boldSystemFontOfSize:13] forWidth:nameMaxWidth lineBreakMode:UILineBreakModeTailTruncation];
+    CGSize nameSize = [name sizeWithFont:[UIFont boldSystemFontOfSize:13] forWidth:nameMaxWidth lineBreakMode:NSLineBreakByTruncatingTail];
     NSString *paddedString = [PAPBaseTextCell padString:content withFont:[UIFont systemFontOfSize:13] toWidth:nameSize.width];    
     CGFloat horizontalTextSpace = [PAPBaseTextCell horizontalTextSpaceForInsetWidth:cellInset];
    
-    CGSize contentSize = [paddedString sizeWithFont:[UIFont systemFontOfSize:13] constrainedToSize:CGSizeMake(horizontalTextSpace, CGFLOAT_MAX) lineBreakMode:UILineBreakModeWordWrap];
+    CGSize contentSize = [paddedString sizeWithFont:[UIFont systemFontOfSize:13] constrainedToSize:CGSizeMake(horizontalTextSpace, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping];
     CGFloat singleLineHeight = [@"test" sizeWithFont:[UIFont systemFontOfSize:13]].height;
     
     // Calculate the added height necessary for multiline text. Ensure value is not below 0.
@@ -219,7 +219,7 @@ static TTTTimeIntervalFormatter *timeFormatter;
 - (void)setContentText:(NSString *)contentString {
     // If we have a user we pad the content with spaces to make room for the name
     if (self.user) {
-        CGSize nameSize = [self.nameButton.titleLabel.text sizeWithFont:[UIFont boldSystemFontOfSize:13] forWidth:nameMaxWidth lineBreakMode:UILineBreakModeTailTruncation];
+        CGSize nameSize = [self.nameButton.titleLabel.text sizeWithFont:[UIFont boldSystemFontOfSize:13] forWidth:nameMaxWidth lineBreakMode:NSLineBreakByTruncatingTail];
         NSString *paddedString = [PAPBaseTextCell padString:contentString withFont:[UIFont systemFontOfSize:13] toWidth:nameSize.width];    
         [self.contentLabel setText:paddedString];
     } else { // Otherwise we ignore the padding and we'll add it after we set the user

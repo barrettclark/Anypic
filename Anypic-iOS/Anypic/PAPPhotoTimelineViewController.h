@@ -6,6 +6,7 @@
 //
 
 #import "PAPPhotoHeaderView.h"
+#import "AppDelegate.h"
 
 @interface PAPPhotoTimelineViewController : PFQueryTableViewController <PAPPhotoHeaderViewDelegate>
 

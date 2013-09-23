@@ -90,7 +90,7 @@
     [self.headerView addSubview:photoCountIconImageView];
     
     UILabel *photoCountLabel = [[UILabel alloc] initWithFrame:CGRectMake( 0.0f, 94.0f, 92.0f, 22.0f)];
-    [photoCountLabel setTextAlignment:UITextAlignmentCenter];
+    [photoCountLabel setTextAlignment:NSTextAlignmentCenter];
     [photoCountLabel setBackgroundColor:[UIColor clearColor]];
     [photoCountLabel setTextColor:[UIColor whiteColor]];
     [photoCountLabel setShadowColor:[UIColor colorWithWhite:0.0f alpha:0.300f]];
@@ -104,7 +104,7 @@
     [self.headerView addSubview:followersIconImageView];
     
     UILabel *followerCountLabel = [[UILabel alloc] initWithFrame:CGRectMake( 226.0f, 94.0f, self.headerView.bounds.size.width - 226.0f, 16.0f)];
-    [followerCountLabel setTextAlignment:UITextAlignmentCenter];
+    [followerCountLabel setTextAlignment:NSTextAlignmentCenter];
     [followerCountLabel setBackgroundColor:[UIColor clearColor]];
     [followerCountLabel setTextColor:[UIColor whiteColor]];
     [followerCountLabel setShadowColor:[UIColor colorWithWhite:0.0f alpha:0.300f]];
@@ -113,7 +113,7 @@
     [self.headerView addSubview:followerCountLabel];
     
     UILabel *followingCountLabel = [[UILabel alloc] initWithFrame:CGRectMake( 226.0f, 110.0f, self.headerView.bounds.size.width - 226.0f, 16.0f)];
-    [followingCountLabel setTextAlignment:UITextAlignmentCenter];
+    [followingCountLabel setTextAlignment:NSTextAlignmentCenter];
     [followingCountLabel setBackgroundColor:[UIColor clearColor]];
     [followingCountLabel setTextColor:[UIColor whiteColor]];
     [followingCountLabel setShadowColor:[UIColor colorWithWhite:0.0f alpha:0.300f]];
@@ -122,7 +122,7 @@
     [self.headerView addSubview:followingCountLabel];
     
     UILabel *userDisplayNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 176.0f, self.headerView.bounds.size.width, 22.0f)];
-    [userDisplayNameLabel setTextAlignment:UITextAlignmentCenter];
+    [userDisplayNameLabel setTextAlignment:NSTextAlignmentCenter];
     [userDisplayNameLabel setBackgroundColor:[UIColor clearColor]];
     [userDisplayNameLabel setTextColor:[UIColor whiteColor]];
     [userDisplayNameLabel setShadowColor:[UIColor colorWithWhite:0.0f alpha:0.300f]];

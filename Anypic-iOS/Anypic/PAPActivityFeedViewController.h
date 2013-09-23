@@ -6,6 +6,7 @@
 //
 
 #import "PAPActivityCell.h"
+#import "AppDelegate.h"
 
 @interface PAPActivityFeedViewController : PFQueryTableViewController <PAPActivityCellDelegate>
 
